@@ -27,14 +27,18 @@
 
 <body>
     <h1>Distance to Range Calculator</h1>
-    <form>
-        <input id = "lowerRangeNumber" type = "number" min = "0" max = "1000000">
-        <input id = "upperRangeNumber" type = "number" min = "0" max = "1000000">
-        <input id = "currentNumber" type = "number" min = "0" max = "1000000">
+    <form id = "distanceToRangeCalculatorForm">
+        <input id = "lowerRangeNumber" type = "number" min = "0" max = "1000000" step = "0.01" placeholder = "Lower Range">
+        <input id = "upperRangeNumber" type = "number" min = "0" max = "1000000" step = "0.01" placeholder = "Upper Range">
+        <input id = "currentNumber" type = "number" min = "0" max = "1000000" step = "0.01" placeholder = "Your Number">
         <input type = "submit" value = "Calculate">
     </form>
+    <div>
+        <span id = "distanceFromLowerRange"></span>
+        <span id = "distanceFromUpperRange"></span>
+    </div>
     <footer>
-
+        Copyright &copy; 2022 <a href = "https://eric-liang.com">Eric Liang</a>
     </footer>
     <script src="js/scripts.js"></script>
 </body>
