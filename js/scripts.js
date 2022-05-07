@@ -1,14 +1,21 @@
-const distanceToRangeCalculatorForm = document.getElementById('distanceToRangeCalculatorForm');
-const lowerRangeNumber = parseFloat(document.getElementById('lowerRangeNumber').value);
-const upperRangeNumber = parseFloat(document.getElementById('upperRangeNumber').value);
-const currentNumber = parseFloat(document.getElementById('currentNumber').value);
-const distanceFromLowerRangeElement = document.getElementById('distanceFromLowerRange');
-const distanceFromUpperRangeElement = document.getElementById('distanceFromUpperRange');
+function calculate() {
+    const rangeDisplayElement = document.getElementById('rangeDisplayElement');
+    const lowerBoundaryNumber = parseFloat(document.getElementById('lowerBoundaryNumberElement').value);
+    const upperBoundaryNumber = parseFloat(document.getElementById('upperBoundaryNumberElement').value);
+    const currentNumber = parseFloat(document.getElementById('currentNumberElement').value);
+    const distanceFromLowerRangeElement = document.getElementById('distanceFromLowerRangeElement');
+    const distanceFromUpperRangeElement = document.getElementById('distanceFromUpperRangeElement');
 
-distanceToRangeCalculatorForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    distanceFromLowerRangeElement.textContent = currentNumber - lowerRangeNumber;
-    console.log(currentNumber - lowerRangeNumber);
-    console.log(typeof currentNumber - lowerRangeNumber);
-    distanceFromUpperRangeElement.textContent = upperRangeNumber - currentNumber;
-});
+    let distanceFromLowerRange = currentNumber - lowerBoundaryNumber;
+    let distanceFromUpperRange = upperBoundaryNumber - currentNumber;
+    let percentageDistanceFromLowerRange = ((currentNumber - lowerBoundaryNumber) / (upperBoundaryNumber - lowerBoundaryNumber)) * 100;
+    let percentageDistanceFromUpperRange = ((upperBoundaryNumber - currentNumber) / (upperBoundaryNumber - lowerBoundaryNumber)) * 100;
+
+    distanceFromLowerRangeElement.innerText = distanceFromLowerRange;
+    distanceFromUpperRangeElement.innerText = distanceFromUpperRange;
+    rangeDisplayElement.min = lowerBoundaryNumber;
+    rangeDisplayElement.max = upperBoundaryNumber;
+    rangeDisplayElement.value = currentNumber;
+
+    document.getElementById('rangeValue').innerText = rangeDisplayElement.value;
+};
