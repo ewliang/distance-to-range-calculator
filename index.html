@@ -21,32 +21,43 @@
     <link rel="icon" href="imgs/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-    <h1>Distance to Range Calculator</h1>
-    <form>
-        <input id = "rangeDisplayElement" type = "range" step = 0.01 min = "0" max = "100" value = "50"><span id = "rangeValue"></span>
+    <main>
+        <h1>Distance to Range Calculator</h1>
+        <form>
+            <div>
+                <span id = "lowerRangeValue"></span>
+                <input id = "rangeDisplayElement" type = "range" step = 0.01 min = "0" max = "100" value = "50">
+                <span id = "upperRangeValue"></span>
+            </div>
+            <div>
+                <div>
+                    <label for = "lowerBoundaryNumberElement">Lower Boundary</label>
+                    <input id = "lowerBoundaryNumberElement" type = "number" step = 0.01 placeholder = "Lower Boundary" required>
+                </div>
+                <div>
+                    <label for = "upperBoundaryNumberElement">Upper Boundary</label>
+                    <input id = "upperBoundaryNumberElement" type = "number" step = 0.01 placeholder = "Upper Boundary" required>
+                </div>
+            </div>
+            <label for = "currentNumberElement">Your Number</label>
+            <input id = "currentNumberElement" type = "number" step = 0.01 placeholder = "Your Number" required><br>
+            <input type = "button" class = "btn btn-primary" value = "Calculate" onclick = "calculate()">
+        </form>
         <div>
-            <label>Lower Boundary: </label>
-            <input id = "lowerBoundaryNumberElement" type = "number" step = 0.01 placeholder = "Lower Boundary">
+            <span id = "distanceFromLowerRangeElement"></span>
+            <span id = "distanceFromUpperRangeElement"></span>
         </div>
-        <div>
-            <label>Upper Boundary: </label>
-            <input id = "upperBoundaryNumberElement" type = "number" step = 0.01 placeholder = "Upper Boundary">
-        </div>
-        <div>
-            <label>Current Number: </label>
-            <input id = "currentNumberElement" type = "number" step = 0.01 placeholder = "Your Number">
-        </div>
-        <input type = "button" value = "Calculate" onclick = "calculate()">
-    </form>
-    <div>
-        <span id = "distanceFromLowerRangeElement"></span>
-        <span id = "distanceFromUpperRangeElement"></span>
-    </div>
+    </main>
     <footer>
         Copyright &copy; 2022 <a href = "https://eric-liang.com">Eric Liang</a>
     </footer>

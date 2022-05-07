@@ -17,5 +17,6 @@ function calculate() {
     rangeDisplayElement.max = upperBoundaryNumber;
     rangeDisplayElement.value = currentNumber;
 
-    document.getElementById('rangeValue').innerText = rangeDisplayElement.value;
+    document.getElementById('lowerRangeValue').innerText = lowerBoundaryNumber;
+    document.getElementById('upperRangeValue').innerText = upperBoundaryNumber;
 };
