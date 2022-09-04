@@ -36,10 +36,16 @@
         <form>
             <div>
                 <span id = "lowerRangeValue"></span>
-                <input id = "rangeDisplayElement" type = "range" step = 0.01 min = "0" max = "100" value = "50">
+                <input id = "rangeDisplayElement" type = "range" step = 0.01 min = "0" max = "100" value = "50" disabled>
                 <span id = "upperRangeValue"></span>
             </div>
             <div>
+                <h2>Results</h2>
+                <span id = "distanceFromLowerBoundaryElement"></span>
+                --------------------------
+                <span id = "distanceFromUpperBoundaryElement"></span>
+            </div>
+            <div class = "">
                 <div>
                     <label for = "lowerBoundaryNumberElement">Lower Boundary</label>
                     <input id = "lowerBoundaryNumberElement" type = "number" step = 0.01 placeholder = "Lower Boundary" required>
@@ -53,10 +59,6 @@
             <input id = "currentNumberElement" type = "number" step = 0.01 placeholder = "Your Number" required><br>
             <input type = "button" class = "btn btn-primary" value = "Calculate" onclick = "calculate()">
         </form>
-        <div>
-            <span id = "distanceFromLowerRangeElement"></span>
-            <span id = "distanceFromUpperRangeElement"></span>
-        </div>
     </main>
     <footer>
         Copyright &copy; 2022 <a href = "https://eric-liang.com">Eric Liang</a>

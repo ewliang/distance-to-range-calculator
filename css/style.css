@@ -50,3 +50,7 @@ input[type='number'] {
 #rangeDisplayElement {
     width: 100%;
 }
+
+#distanceFromLowerBoundaryElement, #distanceFromUpperBoundaryElement {
+    font-size: 1.875rem;
+}
